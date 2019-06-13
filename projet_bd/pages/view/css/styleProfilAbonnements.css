@@ -1,0 +1,287 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Pacifico&display=swap');
+
+/*couleur de fond*/
+body{
+    background-color: rgba(99, 187, 229, 0.17);
+}
+
+/*menu*/
+nav{
+    background-color: rgba(255, 255, 255, 0.42);
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+}
+
+/*formulaire*/
+form{
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 0px;
+}
+
+.form-style-1 {
+    padding: 20px 12px 10px 20px;
+}
+
+.form-style-1 p {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+
+.form-style-1 input[type=text]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+.form-style-1 input[type=text]:focus{
+    -moz-box-shadow: 0 0 8px #96dfcb;
+    -webkit-box-shadow: 0 0 8px #96dfcb;
+    box-shadow: 0 0 8px #96dfcb;
+    border: 1px solid #96dfcb;
+}
+
+.form-style-1 .field-divided{
+    width: 49%;
+}
+
+
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+    background: #73ad9a;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    cursor:pointer;
+}
+
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+    background: #73ad9a;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    cursor:pointer;
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 17px;
+    color: #73ad9a;
+}
+
+h2{
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 17px;
+    color: #73ad9a;
+}
+
+h1:hover{
+    text-decoration: underline;
+}
+
+
+h2:hover{
+    text-decoration: underline;
+}
+
+h3{
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    top: 3%;
+    margin-left: 10%;
+    border-radius: 100px;
+    cursor:pointer;
+    background-color: #96dfcb;
+    color:white;
+    font-size: 17px;
+}
+
+h3:hover{
+    background-color: #73ad9a;
+}
+
+section{
+    background-color:  rgba(99, 187, 229, 0.17);
+    position: absolute;
+    top:11.2%;
+    left: 0px;
+    width: 100%;
+    box-shadow: 0px 2px 0px grey;
+}
+
+h4{
+    display: inline-block;
+    margin-left: 50px;
+    color:#6b6fb8;
+    font-size: 17px;
+}
+
+h14{
+    display:inline-block;
+    margin-left: 50px;
+    font-size: 19px;
+    color:#6b6fb8;
+    margin-left: 600px;
+}
+
+h14:hover{
+    color: #3f436e;
+}
+
+aside{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.42);
+    box-shadow: 0px 0px 15px grey;
+}
+
+li{
+
+    list-style: none;
+    display: inline-block;
+    background-color: rgba(115, 173, 154, 0.31);
+    border-radius: 5px;
+    margin-top:10%;
+    margin-left:36%;
+    width:400px;
+
+}
+
+h5{
+    display: block;
+    font-size: 15px;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 2px;
+    color: #73ad9a;
+}
+
+h6{
+    display: block;
+    margin-left: 10%;
+    margin-top:1%;
+    font-size: 20px;
+    color:#6b6fb8;
+}
+
+h7{
+    display: block;
+    margin-left: 10%;
+    font-size: 16px;
+    color: #73ad9a;
+    margin-top:1%;
+}
+
+
+h15{
+    display: block;
+    font-size: 15px;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 2px;
+    color: #73ad9a;
+}
+
+h16{
+    display: block;
+    font-size: 22px;
+    margin-left: 20px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+
+
+h17{
+    display: block;
+    font-size:15px;
+    margin-left:20px;
+    color:#6b6fb8;
+}
+
+
+h8{
+    display: block;
+    font-size:15px;
+    margin-left:20px;
+    margin-top: 2px;
+}
+
+
+h9{
+    color: black;
+    font-size: 16px;
+    display: block;
+    margin-top: 1%;
+    max-width:200px;
+    overflow-wrap: break-spaces;
+}
+
+h10{
+    font-size: 13px;
+    color: #6b6fb8;
+}
+
+h10:hover{
+    color: #18c640;
+}
+
+h11{
+    font-size: 15px;
+    color: #18c640;
+}
+
+h12{
+    font-size: 15px;
+    color: #6b6fb8;
+}
+
+h12:hover{
+    color: #c6316f;
+}
+
+h13{
+    font-size: 15px;
+    color: #c6316f;
+}
+
+h15{
+    margin-left:85%;
+    font-size: 13px;
+    color:black;
+}
+
+footer{
+    position: absolute;
+    color:#966bb8;
+    top:28%;
+    left: 70%;
+    width: 450px;
+    height: 150px;
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #966bb8;
+}
+
+footer a:visited{
+    color:#966bb8;
+}
