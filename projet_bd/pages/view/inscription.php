@@ -10,13 +10,13 @@
 
 
     <h1>Créer votre compte</h1>
-    <form method="post" action="traitement.php">
+    <form method="post" action="/projet_bd/pages/traitement">
         <ul class="form-style-1">
      <p>
     <input type="text" name="pseudo" id="pseudo" class="field-divided" placeholder="pseudo" size="30" maxlength="50" />
      </p>
      <p>
-    <input type="text" name="user_name" id="user_name" class="field-divided" placeholder="@nom d'utilisateur" size="30"/>
+    <input type="text" name="user_name" id="user_name" class="field-divided" placeholder="@nom d'utilisateur" size="30" maxlength="40"/>
      </p>
         <?php if(isset($_SESSION['flashInscription'])) {
             echo "

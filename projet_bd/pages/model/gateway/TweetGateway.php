@@ -87,7 +87,6 @@ class TweetGateway
         $query = $this->conn->prepare('INSERT INTO tweet (tweet_content, tweet_date, tweet_user_id) VALUES (:tweet_content, now(), :tweet_user_id)');
         $executed = $query->execute([
             ':tweet_content' => $this->tweet_content,
-            //':tweet_date' => $this->now(),
             ':tweet_user_id' => $this->tweet_user_id,
         ]);
 
@@ -105,23 +104,30 @@ class TweetGateway
 
     }
 
-    public function nbTweet($id) : int{
-        $query = $this->conn->prepare('SELECT COUNT(*) FROM tweet.COLUMNS WHERE t.id = :id');
-        $query->execute([':id' => $id]);
-        $element = $query->fetch(\PDO::FETCH_ASSOC);
-        return $element;
-    }
 
     public function delete($tweet_id) : void
     {
         if(!$tweet_id) throw new \Error('Instance does not exist in base');
 
         $query = $this->conn->prepare('DELETE FROM tweet WHERE tweet_id = :tweet_id');
-        $executed = $query->execute([
-            ':tweet_id' => $tweet_id
-        ]);
+        $executed = $query->execute([':tweet_id' => $tweet_id]);
 
         if(!$executed) throw new \Error('Delete failed');
+
+    }
+
+    public function update($tweet_id) : void
+    {
+        if(!$tweet_id) throw new \Error('Instance does not exist in base');
+
+        $query = $this->conn->prepare('UPDATE tweet SET tweet_content = :tweet_content, tweet_date = now() WHERE id = :id');
+        $executed = $query->execute([
+            ':tweet_content' => $this->tweet_content,
+            ':id' => $tweet_id
+        ]);
+
+        if(!$executed) throw new \Error('Update failed');
+
     }
 
 

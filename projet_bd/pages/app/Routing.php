@@ -17,16 +17,7 @@ class Routing
         $this->app = $app;
     }
     public function setup() {
-        //cities
-        /*$city = new CityController($this->app);
-        $this->app->get('/', [$city, 'citiesHandler']);
-        $this->app->get('/city/(\d+)', [$city, 'cityHandler']);
-        $this->app->get('/recherche.php/(\w*)', [$city, 'searchHandler']);
-        $this->app->get('/recherche.php', [$city, 'searchHandlerV']);
-        $this->app->get('/create.php', [$city, 'createHandler']);
-        $this->app->post('/handleCreate.php', [$city, 'createDBHandler']);
-        // $this->app->post('/deleteCities.php', [$city, 'deleteDBHandlerCities']);
-        */
+
 
         $this->app->get('/', function() {
         return $this->app->getService('render')('index1');
@@ -39,49 +30,52 @@ class Routing
         $retweet = new RetweetController($this->app);
 
         //Inscription
-        $this->app->get('/inscription.php', [$user, 'createHandler']);
-        $this->app->post('/traitement.php', [$user, 'createDBHandler']);
+        $this->app->get('/inscription', [$user, 'createHandler']);
+        $this->app->post('/traitement', [$user, 'createDBHandler']);
 
 
         //Connection
-        $this->app->get('/index1.php', [$user, 'connectionHandler']);
-        $this->app->post('/traitementConnection.php', [$user, 'connectionDBHandler']);
+        $this->app->get('/index1', [$user, 'connectionHandler']);
+        $this->app->post('/traitementConnection', [$user, 'connectionDBHandler']);
+
+        //Deconnection
+        $this->app->get('/traitementDeconnection', [$user, 'deconnectionHandler']);
 
         //Accueil
-        $this->app->get('/tl.php', [$tweet, 'ActualiteHandler']);
+        $this->app->get('/tl', [$tweet, 'AccueilHandler']);
 
         //Profil
-        $this->app->get('/profilTweet.php', [$user, 'profilHandler']);
+        $this->app->get('/profilTweet', [$user, 'profilHandler']);
 
         //Recherche
-        $this->app->get('/recherche.php', [$user, 'rechercheHandler']);
-        $this->app->post('/traitementRecherche.php', [$user, 'rechercheDBHandler']);
+        $this->app->get('/recherche', [$user, 'rechercheHandler']);
+        $this->app->post('/traitementRecherche', [$user, 'rechercheDBHandler']);
 
         //Tweeter
-        $this->app->get('/tweeter.php', [$tweet, 'createTweetHandler']);
-        $this->app->post('/traitementTweet.php', [$tweet, 'createTweetDBHandler']);
+        $this->app->get('/tweeter', [$tweet, 'createTweetHandler']);
+        $this->app->post('/traitementTweet', [$tweet, 'createTweetDBHandler']);
 
         //EditerProfil
-        $this->app->get('/changeProfil.php', [$user, 'changeProfilHandler']);
-        $this->app->post('/traitementChangeProfil.php', [$user, 'changeProfilDBHandler']);
+        $this->app->get('/changeProfil', [$user, 'changeProfilHandler']);
+        $this->app->post('/traitementChangeProfil', [$user, 'changeProfilDBHandler']);
 
         //Suivre Abonnement et Abonnés
-        $this->app->get('/traitementSuivre.php/(\d+)', [$follow, 'abonnementDBHandler']);
-        $this->app->get('/profilAbonnement.php', [$user, 'UserFollowedHandler']);
-        $this->app->get('/profilAbonnés.php', [$user, 'UserFollowerHandler']);
+        $this->app->get('/traitementSuivre/(\d+)', [$follow, 'abonnementDBHandler']);
+        $this->app->get('/profilAbonnement', [$user, 'UserFollowedHandler']);
+        $this->app->get('/profilAbonnes', [$user, 'UserFollowerHandler']);
 
         //Profil Abonnement
-        $this->app->get('profilOtherPeopleAbonnement.php/(\d+)', [$user, 'UserFollowedProfilHandler']);
+        $this->app->get('/profilOtherPeopleAbonnement/(\d+)', [$user, 'UserFollowedProfilHandler']);
 
         //Likes et liker
-        $this->app->get('/traitementLike.php/(\d+)', [$like, 'likeDBHandler']);
-        $this->app->get('/profilLike.php',[$user, 'UserLikesHandler']);
-        
+        $this->app->get('/traitementLike/(\d+)', [$like, 'likeDBHandler']);
+        $this->app->get('/profilLike',[$user, 'UserLikesHandler']);
 
         //Retweet
-        $this->app->get('/traitementRetweet.php/(\d+)', [$retweet, 'retweetDBHandler']);
+        $this->app->get('/traitementRetweet/(\d+)', [$retweet, 'retweetDBHandler']);
 
         //SupprimerTweet
-        $this->app->get('/traitementSuppTweet.php/(\d+)', [$tweet, 'deleteTweetDBHandler']);
+        $this->app->get('/traitementSuppTweet/(\d+)', [$tweet, 'deleteTweetDBHandler']);
+
     }
 }

@@ -48,48 +48,26 @@ class TweetFinder
 
     }
 
-    public function findActuPerso()
+    public function findActuPerso($id)
     {
         $query = $this->conn->prepare('SELECT t.tweet_content, t.tweet_date, t.tweet_id, t.tweet_user_id, u.user_name FROM tweet t LEFT OUTER JOIN retweet r ON t.tweet_id = r.retweet_tweet_id INNER JOIN user u ON u.id = t.tweet_user_id WHERE r.retweet_user_id = :tweet_user_id OR t.tweet_user_id = :tweet_user_id ORDER BY t.tweet_date DESC');
-        $query->execute([':tweet_user_id' => $_SESSION['id']]); // Exécution de la requête
+        $query->execute([':tweet_user_id' => $id]); // Exécution de la requête
         $elements = $query->fetchAll(\PDO::FETCH_ASSOC);
 
         if($elements == 0) return null;
 
-        $tweets = [];
-        $tweet = null;
-
-        foreach ($elements as $element)
-        {
-            $tweet = new TweetGateway($this->app);
-            $tweet->hydrate($element);
-
-            $tweets[] = $tweet;
-        }
-
-        return $tweets;
+        return $elements;
     }
 
     public function findActu()
     {
-        $query = $this->conn->prepare('SELECT t.tweet_content, t.tweet_date, t.tweet_id, t.tweet_user_id, u.user_name FROM tweet t INNER JOIN user u ON u.id = t.tweet_user_id INNER JOIN follow f ON t.tweet_user_id = f.user_followed_id WHERE f.user_follower_id = :id OR t.tweet_user_id = :id ORDER BY t.tweet_date DESC');
+        $query = $this->conn->prepare('SELECT t.tweet_content, t.tweet_date, t.tweet_id, t.tweet_user_id, u.user_name FROM tweet t INNER JOIN user u ON u.id = t.tweet_user_id LEFT OUTER JOIN follow f ON t.tweet_user_id = f.user_followed_id WHERE f.user_follower_id = :id OR t.tweet_user_id = :id ORDER BY t.tweet_date DESC');
         $query->execute([':id' => $_SESSION['id']]); // Exécution de la requête
         $elements = $query->fetchAll(\PDO::FETCH_ASSOC);
 
         if($elements == 0) return null;
 
-        $tweets = [];
-        $tweet = null;
-
-        foreach ($elements as $element)
-        {
-            $tweet = new TweetGateway($this->app);
-            $tweet->hydrate($element);
-
-            $tweets[] = $tweet;
-        }
-
-        return $tweets;
+        return $elements;
     }
 
     public function  findLikes()
@@ -100,17 +78,16 @@ class TweetFinder
 
         if($elements == 0) return null;
 
-        $tweets = [];
-        $tweet = null;
+        return $elements;
 
-        foreach ($elements as $element)
-        {
-            $tweet = new TweetGateway($this->app);
-            $tweet->hydrate($element);
+    }
 
-            $tweets[] = $tweet;
-        }
-
-        return $tweets;
+    //Récupère le nombre de tweets de l'utilisateur
+    public function findNbTweet($id)
+    {
+        $query = $this->conn->prepare('SELECT COUNT(*) FROM tweet t INNER JOIN user u ON u.id = t.tweet_user_id WHERE u.id = :id');
+        $query->execute([':id' => $id]);
+        $element = $query->fetch(\PDO::FETCH_ASSOC);
+        return $element;
     }
 }

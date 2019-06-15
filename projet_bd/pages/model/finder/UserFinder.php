@@ -33,9 +33,6 @@ class UserFinder
 
         if($element == 0) return null;
 
-       /* $user_name = new UserGateway($this->app);
-        $user_name->hydrate($element);*/
-
         return $element;
     }
 

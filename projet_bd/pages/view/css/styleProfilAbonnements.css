@@ -266,6 +266,13 @@ h15{
     font-size: 13px;
     color:black;
 }
+a{
+    color: #6b6fb8;
+}
+
+a:visited{
+    color: #6b6fb8;
+}
 
 footer{
     position: absolute;

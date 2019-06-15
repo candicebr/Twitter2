@@ -14,6 +14,7 @@ class TweetController extends ControllerBase
         parent::__construct($app);
     }
 
+    //Créer un tweet
     public function createTweetHandler(Request $request) {
         return $this->app->getService('render')('tweeter');
     }
@@ -25,37 +26,44 @@ class TweetController extends ControllerBase
         $tweet = [
 
             $result->setTweetContent($request->getParameters('tweet_content')),
-            //$result->setTweetDate(date("Y-m-d")),
             $result->setTweetUserId($_SESSION['id']),
 
         ];
 
         $result->insert();
 
-        $_SESSION['nombre_tweet'] = $result->nbTweet($_SESSION['id']);
-
+        //$_SESSION['nombre_tweet'] = $result->nbTweet($_SESSION['id']);
 
         if(!$result) {
             $this->app->getService('render')('tweeter', ['tweet' => $tweet, 'error' => true]);
         }
 
 
-        $this->redirect('/projet_bd/pages/profilTweet.php');
+        $this->redirect('/projet_bd/pages/profilTweet');
 
     }
 
+
+
+    //Supprimer un tweet
     public function deleteTweetDBHandler(Request $request, $tweet_id)
     {
         $result = new TweetGateway($this->app);
-
         $result->delete($tweet_id);
-        $this->redirect('/projet_bd/pages/profilTweet.php');
+
+        $this->redirect('/projet_bd/pages/profilTweet');
+
     }
 
-    public function ActualiteHandler(Request $request)
+    //File d'actualité
+    public function AccueilHandler(Request $request)
     {
         $tweets = $this->app->getService('TweetFinder')->findActu();
-        return $this->app->getService('render')('tl', ['tweets' => $tweets]);
+        $nb_tweets = $this->app->getService('TweetFinder')->findNbTweet($_SESSION['id']);
+        $nb_abonnement=$this->app->getService('FollowFinder')->findNbAbonnement($_SESSION['id']);
+        $nb_abonne=$this->app->getService('FollowFinder')->findNbAbonne($_SESSION['id']);
+
+        return $this->app->getService('render')('tl', ['tweets' => $tweets, 'nb_tweets' => $nb_tweets, 'nb_abonnement' => $nb_abonnement, 'nb_abonne' => $nb_abonne]);
     }
 
 

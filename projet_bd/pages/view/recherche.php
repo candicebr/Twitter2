@@ -19,7 +19,7 @@
 
  <?php foreach ($params['users'] as $user) : ?>
 <li>
-     <a href="traitementSuivre.php/<?php echo $user->getId() ?>">  <h5>Suivre</h5> </a>
+    <a href="/projet_bd/pages/traitementSuivre/<?php echo $user->getId() ?>">  <h5>Suivre</h5> </a>
     <h6><?php echo $user->getPseudo(); ?></h6>
     <h7>@<?php echo $user->getUserName(); ?></h7>
     <h8><?php echo $user->getInfoPerso(); ?></h8>

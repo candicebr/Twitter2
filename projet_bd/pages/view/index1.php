@@ -8,10 +8,10 @@
 
 <body>
 
-    <form method="post" action="traitementConnection.php">
+    <form method="post" action="/projet_bd/pages/traitementConnection">
         <ul class="form-style-1">
             <p>
-            <input type="text" name="user_name" id="user_name" class="field-divided" placeholder="Nom d'utilisateur" size="30" maxlength="10" />
+            <input type="text" name="user_name" id="user_name" class="field-divided" placeholder="Nom d'utilisateur" size="30" maxlength="40" />
             <input type="password" name="password" id="password" class="field-divided" placeholder="Mot de passe" size="30"/>
             <input type="submit" value="Se Connecter" />
             </p>
@@ -34,7 +34,7 @@
 
     <h2>Rejoignez Twitter aujourd'hui.</h2>
 
-    <a href="inscription.php"><h3>S'inscrire</h3></a>
+    <a href="/projet_bd/pages/inscription"><h3>S'inscrire</h3></a>
 
 
 <!-- Le pied de page -->
