@@ -32,4 +32,7 @@ Fonctionnalités réalisées :
      
    Bonus tenté: CSS.
    
+   URL du site en ligne : www.tp.iut-lepuy.fr
+   Lien vers le github : https://github.com/candicebr/Twitter2
+   
    
