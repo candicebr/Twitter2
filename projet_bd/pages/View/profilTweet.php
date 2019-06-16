@@ -15,7 +15,7 @@
 <!-- Petit menu: tweets, abonnements, abonnés, j'aime-->
 
 <section>
-    <a href="/projet_bd/pages/profilTweet"><h4>Tweets</h4></a><a href="/projet_bd/pages/profilAbonnement"><h4>Abonnements</h4></a><a href="/projet_bd/pages/profilAbonnes"><h4>Abonnés</h4></a><a href="/projet_bd/pages/profilLike"><h4>J'aime</h4></a><a href="/projet_bd/pages/changeProfil"><h14>Editer le profil</h14></a>
+    <a href="/profilTweet"><h4>Tweets</h4></a><a href="/profilAbonnement"><h4>Abonnements</h4></a><a href="/profilAbonnes"><h4>Abonnés</h4></a><a href="/profilLike"><h4>J'aime</h4></a><a href="/changeProfil"><h14>Editer le profil</h14></a>
 </section>
 
 <!-- courte description du profil-->
@@ -29,10 +29,10 @@
 <li>
     <?php if ($tweets["tweet_user_id"] == $_SESSION['id']) {?>
         <!--   <a href="/projet_bd/pages/tweeter/<?php //echo $tweets["tweet_id"] ?>">  <h15>Modifier</h15></a>-->
-    <a href="/projet_bd/pages/traitementSuppTweet/<?php echo $tweets["tweet_id"] ?>">  <h15>Supprimer</h15></a> <?php }?>
+    <a href="/traitementSuppTweet/<?php echo $tweets["tweet_id"] ?>">  <h15>Supprimer</h15></a> <?php }?>
     <h8><?php echo $tweets['user_name']; ?></h8><h10><?php echo $tweets["tweet_date"];?></h10>
         <h9><?php echo $tweets["tweet_content"]; ?></h9>
-        <a href="/projet_bd/pages/traitementRetweet/<?php echo $tweets["tweet_id"] ?>">  <h10>Retweeter</h10> </a><a href="/projet_bd/pages/traitementLike/<?php echo $tweets["tweet_id"] ?>">  <h12>J'aime </h12> </a>
+        <a href="/traitementRetweet/<?php echo $tweets["tweet_id"] ?>">  <h10>Retweeter</h10> </a><a href="/traitementLike/<?php echo $tweets["tweet_id"] ?>">  <h12>J'aime </h12> </a>
 </li>
 <?php endforeach; ?>
 

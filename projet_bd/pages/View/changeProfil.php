@@ -15,12 +15,12 @@
 <!-- Petit menu: tweets, abonnements, abonnés, j'aime-->
 
 <section>
-    <a href="/projet_bd/pages/profilTweet"><h4>Tweets</h4></a><a href="/projet_bd/pages/profilAbonnement"><h4>Abonnements</h4></a><a href="/projet_bd/pages/profilAbonnes"><h4>Abonnés</h4></a><a href="/projet_bd/pages/profilLike"><h4>J'aime</h4></a><a href="/projet_bd/pages/changeProfil"><h14>Editer le profil</h14></a>
+    <a href="/profilTweet"><h4>Tweets</h4></a><a href="/profilAbonnement"><h4>Abonnements</h4></a><a href="/profilAbonnes"><h4>Abonnés</h4></a><a href="/profilLike"><h4>J'aime</h4></a><a href="/changeProfil"><h14>Editer le profil</h14></a>
 </section>
 
 <!--section où nous pourrons modifier les données de notre profil-->
 <article>
-    <form method="post" action="/projet_bd/pages/traitementChangeProfil">
+    <form method="post" action="/traitementChangeProfil">
         <p>
             <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" size="30" maxlength="10" />
             <input type="text" name="info_perso" id="info_perso" placeholder="bio de l'utilisateur" size="30"/><br/>

@@ -10,7 +10,7 @@
 
 
     <h1>Créer votre compte</h1>
-    <form method="post" action="/projet_bd/pages/traitement">
+    <form method="post" action="/traitement">
         <ul class="form-style-1">
      <p>
     <input type="text" name="pseudo" id="pseudo" class="field-divided" placeholder="pseudo" size="30" maxlength="50" />
@@ -37,7 +37,7 @@
         </ul>
     </form>
 
-<img src="./view/img/twitter_bird.png" HEIGHT="700">
+<img src="./View/img/twitter_bird.png" HEIGHT="700">
 <!-- Le pied de page -->
 
 <?php include("pied_de_page.php"); ?>

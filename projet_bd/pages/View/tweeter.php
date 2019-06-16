@@ -15,7 +15,7 @@
 <article>
     <h4>Ecrire un nouveau Tweet</h4>
     <ul class="form-style-2">
-    <form method="post" action="/projet_bd/pages/traitementTweet">
+    <form method="post" action="/traitementTweet">
         <textarea name="tweet_content" id="tweet_content" class="field-divided" placeholder="Quoi de neuf ?" rows="5" cols="70" maxlength="140"></textarea>
         <input type="submit" value="Tweeter" />
     </ul>

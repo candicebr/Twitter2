@@ -27,14 +27,14 @@ class FollowController extends ControllerBase
         if($followed == null) //si il ne fait pas partie des abonnements
         {
             $result->insert();
-            $this->redirect('/projet_bd/pages/profilTweet');
+            $this->redirect('/profilTweet');
             return $this->app->getService('render')('profilTweet', ['followed' => $followed]);
 
         }
         else{
 
             $result->delete();
-            $this->redirect('/projet_bd/pages/profilTweet');
+            $this->redirect('/profilTweet');
             return $this->app->getService('render')('profilAbonnés', ['users' => $users, 'user' => $user]);
 
         }

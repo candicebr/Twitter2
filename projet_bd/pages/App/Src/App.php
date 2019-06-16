@@ -85,10 +85,12 @@ class App
         $this->registerRoute(Request::DELETE, $pattern, $callable);
         return $this;
     }
+
     /**
      * Launch the php App
      *
      * @param Request|null $request
+     * @throws \HttpException
      */
     public function run(Request $request = null)
     {
@@ -106,9 +108,11 @@ class App
         }
         throw new \Error('No routes available for this uri');
     }
+
     /**
      * @param Route $route
      * @param Request $request
+     * @throws \HttpException
      */
     private function process(Route $route, Request $request)
     {

@@ -1,5 +1,6 @@
 <?php
 namespace App\Src;
+
 class Autoloader
 {
     /**
@@ -13,6 +14,6 @@ class Autoloader
     public static function autoload($class){
         $nameSpace = explode('\\', $class);
         $class = implode('/', $nameSpace);
-        require_once $_SERVER['DOCUMENT_ROOT'] . ‘/‘ . $class.'.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $class.'.php';
     }
 }

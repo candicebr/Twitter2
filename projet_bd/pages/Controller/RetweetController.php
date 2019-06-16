@@ -26,12 +26,12 @@ class RetweetController extends ControllerBase
         if ($like == null) //si il ne fait pas partie des retweet
         {
             $result->insert();
-            $this->redirect('/projet_bd/pages/profilTweet');
+            $this->redirect('/profilTweet');
 
         } else {
 
             $result->delete();
-            $this->redirect('/projet_bd/pages/profilTweet');
+            $this->redirect('/profilTweet');
         }
     }
 }

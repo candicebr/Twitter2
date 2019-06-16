@@ -22,5 +22,3 @@ class Database
         return $this->dbh;
     }
 }
-
-?>

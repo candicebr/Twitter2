@@ -36,7 +36,7 @@ class TweetController extends ControllerBase
             $this->app->getService('render')('tweeter', ['tweet' => $tweet, 'error' => true]);
         }
 
-        $this->redirect('/projet_bd/pages/profilTweet');
+        $this->redirect('/profilTweet');
     }
 
 
@@ -47,7 +47,7 @@ class TweetController extends ControllerBase
         $result = new TweetGateway($this->app);
         $result->delete($tweet_id);
 
-        $this->redirect('/projet_bd/pages/profilTweet');
+        $this->redirect('/profilTweet');
 
     }
 

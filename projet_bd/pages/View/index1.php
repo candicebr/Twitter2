@@ -8,7 +8,7 @@
 
 <body>
 
-    <form method="post" action="/projet_bd/pages/traitementConnection">
+    <form method="post" action="/traitementConnection">
         <ul class="form-style-1">
             <p>
             <input type="text" name="user_name" id="user_name" class="field-divided" placeholder="Nom d'utilisateur" size="30" maxlength="40" />
@@ -28,13 +28,13 @@
      ?>
     </div>
 
-    <img src="./view/img/twitter_bird.png" HEIGHT="700">
+    <img src="./View/img/twitter_bird.png" HEIGHT="700">
 
     <h1>Découvrez ce qui se passe dans le monde en temps réel.</h1>
 
     <h2>Rejoignez Twitter aujourd'hui.</h2>
 
-    <a href="/projet_bd/pages/inscription"><h3>S'inscrire</h3></a>
+    <a href="/inscription"><h3>S'inscrire</h3></a>
 
 
 <!-- Le pied de page -->

@@ -31,13 +31,13 @@ class UserController extends ControllerBase
             } else {
                 $flashInscription = "Ce nom d'utilisateur existe déjà";
                 $_SESSION['flashInscription'] = $flashInscription;
-                $this->redirect('/projet_bd/pages/inscription');
+                $this->redirect('/inscription');
             }
         }
         else {
             $flashInscription= "Veuillez entrer un utilisateur";
             $_SESSION['flashInscription'] =$flashInscription;
-            $this->redirect('/projet_bd/pages/inscription');
+            $this->redirect('/inscription');
         }
 
         if ($_POST['password'] != null) //Si le mot de passe est fournis
@@ -47,7 +47,7 @@ class UserController extends ControllerBase
         else{
             $flashInscription= "Veuillez entrer un mot de passe";
             $_SESSION['flashInscription'] =$flashInscription;
-            $this->redirect('/projet_bd/pages/inscription');
+            $this->redirect('/inscription');
         }
 
         $user = [
@@ -66,13 +66,12 @@ class UserController extends ControllerBase
         $_SESSION['pseudo'] = $result->getPseudo();
         $_SESSION['birth'] = $result->getBirth();
         $_SESSION['info_perso'] = $result->getInfoPerso();
-        //$_SESSION['nombre_tweet'] = $tweetResult->nbTweet($_SESSION['id']);
 
         if(!$result) {
             $this->app->getService('render')('inscription', ['user' => $user, 'error' => true]);
         }
 
-        $this->redirect('/projet_bd/pages/tl');
+        $this->redirect('/tl');
     }
 
     //Connection
@@ -101,16 +100,16 @@ class UserController extends ControllerBase
                 $_SESSION['birth'] = $user['birth'];
                 $_SESSION['info_perso'] = $user['info_perso'];
 
-                $this->redirect('/projet_bd/pages/tl');
+                $this->redirect('/tl');
             }
             else{
                 $_SESSION['flash'] =$flash2;
-                $this->redirect('/projet_bd/pages/index1');
+                $this->redirect('/index1');
             }
         }
         else{
             $_SESSION['flash'] =$flash;
-            $this->redirect('/projet_bd/pages/index1');
+            $this->redirect('/index1');
         }
     }
 
@@ -118,7 +117,7 @@ class UserController extends ControllerBase
     public function deconnectionHandler(Request $request)
     {
         session_destroy();
-        $this->redirect('/projet_bd/pages/index1');
+        $this->redirect('/index1');
     }
 
 
@@ -187,7 +186,7 @@ class UserController extends ControllerBase
             $this->app->getService('render')('changeProfil', ['user' => $user, 'error' => true]);
         }
 
-        $this->redirect('/projet_bd/pages/profilTweet');
+        $this->redirect('/profilTweet');
 
     }
 
