@@ -17,18 +17,18 @@ Fonctionnalités réalisées :
     Un récapituatif de notre compte: pseudo, nom d'utilisateur, notre nombre de tweet, notre nombre d'abonnés, notre nombre d'abonnement.
     Notre tl avec les tweets des personnes que nous suivons, nos retweets et nos tweets.
     
-    -Dans le menu en haut nous pouvons rechercher une personne:
+   -Dans le menu en haut nous pouvons rechercher une personne:
       Le site nous retroune tous les noms d'utilisateur ayant la chaine de caractère tapée. 
       Nous pouvons alors accéder au profil de la personne et la suivre
      
-    -Toujours dans le menu, nous pouvons tweeter avec 140 caractères maximum, une fois avoir tweeté nous atterissons sur notre profil (accessible aussi par le menu) où nous pouvons voir la date et le contenu du tweet. Nous pouvons aussi le supprimer.
+   -Toujours dans le menu, nous pouvons tweeter avec 140 caractères maximum, une fois avoir tweeté nous atterissons sur notre profil (accessible aussi par le menu) où nous pouvons voir la date et le contenu du tweet. Nous pouvons aussi le supprimer.
     
-    -Dans notre profil:
+   -Dans notre profil:
       Notre nom d'utilisateur, notre pseudi, notre date de naissance et notre bio est affichée ainsi que nos tweets et retweets.
       Nous pouvons aussi accèder aux tweets que nous avons aimé.
       Nous pouvons accèder aux utilisateurs que nous suivons et qui nous suivent.
       
-     -Enfin nous pouvons nous déconnecter sur la page principale.
+   -Enfin nous pouvons nous déconnecter sur la page principale.
      
    Bonus tenté: CSS.
    
